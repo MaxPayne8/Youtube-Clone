@@ -38,12 +38,13 @@ const Header = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png"
           alt="hamburger-logo"
         />
-
-        <img
-          className="h-8 ml-4 mt-1"
-          src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg"
-          alt="utube-logo"
-        />
+        <a href="/">
+          <img
+            className="h-8 ml-4 mt-1"
+            src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg"
+            alt="utube-logo"
+          />
+        </a>
       </div>
 
       <div className="flex ">
