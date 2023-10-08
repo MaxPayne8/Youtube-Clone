@@ -56,7 +56,7 @@ const Header = () => {
           onBlur={() => setShowSuggestions(false)}
         ></input>
         <button className="px-3 py-1 mx-3 rounded-lg text-white bg-black h-10 mt-1">
-          Search
+          Smart-Search
         </button>
         <img
           className="h-10 mt-1"
