@@ -22,7 +22,7 @@ const ButtonList = () => {
   ];
   return (
     <div className=" overflow-x-scroll">
-      <div className="flex  ">
+      <div className="flex flex-wrap ">
         {list.map((category, index) => (
           <Button name={category} key={index} />
         ))}

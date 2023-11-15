@@ -32,6 +32,7 @@ const LiveChat = () => {
       </div>
 
       <form
+        className="flex"
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(addMessages({ name: "Zatin Pandey", message: liveMsg }));

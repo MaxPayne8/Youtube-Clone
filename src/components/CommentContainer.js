@@ -51,7 +51,7 @@ const commentData = [
   },
   {
     name: "Zatin Pandey",
-    text: "Wow this looks amazing such an amazing website ",
+    text: "Thanks a lot everyone, it means a lot👻👻",
     replies: [],
   },
 ];

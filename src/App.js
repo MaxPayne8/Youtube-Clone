@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import MainContainer from "./components/MainContainer";
 import store from "./utils/store";
 import { Provider } from "react-redux";
-import { Route, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 import WatchPage from "./components/WatchPage";
 
