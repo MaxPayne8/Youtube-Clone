@@ -18,7 +18,7 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showSuggestion, setShowSuggestions] = useState(false);
-  const [search, setSearch] = useState(false);
+  const [search, setSearch] = useState(0);
 
   const getSearchSuggestions = async () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
@@ -35,9 +35,9 @@ const Header = () => {
     setSearch(!search);
   };
 
-  // useEffect(() => {
-  //   getVideo();
-  // }, [search]);
+  useEffect(() => {
+    getVideo();
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => getSearchSuggestions(), 200);
@@ -47,7 +47,7 @@ const Header = () => {
     };
   }, [searchQuery]);
   return (
-    <div className="flex justify-between shadow-lg">
+    <div className="flex justify-between shadow-lg ">
       <div className="flex  ">
         <img
           onClick={() => toggle_menu()}
