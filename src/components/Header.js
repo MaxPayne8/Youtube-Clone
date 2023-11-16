@@ -35,9 +35,9 @@ const Header = () => {
     setSearch(!search);
   };
 
-  useEffect(() => {
-    getVideo();
-  }, []);
+  // useEffect(() => {
+  //   getVideo();
+  // }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => getSearchSuggestions(), 200);
@@ -55,20 +55,20 @@ const Header = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png"
           alt="hamburger-logo"
         />
-        <a href="/">
+        <Link to="/">
           <img
             className="hidden md:h-8 md:ml-4 md:mt-1  md:block"
             src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg"
             alt="utube-logo"
           />
-        </a>
-        <a href="/">
+        </Link>
+        <Link to="/">
           <img
             className="h-16 ml-4 -mt-2 w-18 z-10 md:hidden"
             src="https://img.freepik.com/premium-vector/red-youtube-logo-social-media-logo_197792-1803.jpg"
             alt="utube-logo"
           />
-        </a>
+        </Link>
       </div>
 
       <div className="flex ">
