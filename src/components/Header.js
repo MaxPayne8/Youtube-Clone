@@ -64,7 +64,7 @@ const Header = () => {
         </Link>
         <Link to="/">
           <img
-            className="h-16 ml-4 -mt-2 w-18 z-10 md:hidden"
+            className="h-16 ml-2 -mt-2 w-18 z-10 md:hidden"
             src="https://img.freepik.com/premium-vector/red-youtube-logo-social-media-logo_197792-1803.jpg"
             alt="utube-logo"
           />

@@ -7,9 +7,7 @@ import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
-    <div className="flex w-screen">
-      <Sidebar />
-
+    <div className="flex w-screen ">
       <Outlet />
     </div>
   );
