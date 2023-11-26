@@ -47,7 +47,7 @@ const Header = () => {
     };
   }, [searchQuery]);
   return (
-    <div className="flex justify-between shadow-lg ">
+    <div className="flex justify-between  w-full  shadow-lg ">
       <div className="flex  ">
         <img
           onClick={() => toggle_menu()}

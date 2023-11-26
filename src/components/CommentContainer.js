@@ -59,7 +59,7 @@ const commentData = [
 const Comment = ({ data }) => {
   const { name, text } = data;
   return (
-    <div className="flex shadow-sm md:w-auto  bg-slate-300 border-2 border-black">
+    <div className="flex shadow-sm w-full  bg-slate-300 border-2 border-black">
       <img
         className="w-8 h-8"
         src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg"
