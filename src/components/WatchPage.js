@@ -23,7 +23,7 @@ const WatchPage = () => {
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="">
               <iframe
-                className=" w-[350px] h-[200px] sm:h-[400px] sm:w-[800px] rounded-lg border-4 border-violet-900 m-2 "
+                className=" w-[300px] h-[200px] sm:h-[400px] sm:w-[800px] rounded-lg border-4 border-violet-900 m-2 "
                 width="800"
                 height="400"
                 src={"https://www.youtube.com/embed/" + searchParams.get("v")}
