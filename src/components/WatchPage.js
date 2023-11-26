@@ -15,7 +15,7 @@ const WatchPage = () => {
   const [searchParams] = useSearchParams();
   console.log(searchParams.get("v"));
   return (
-    <div className="flex  ">
+    <div className="flex   ">
       <Sidebar />
       <div>
         <Header />
