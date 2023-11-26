@@ -24,7 +24,7 @@ const LiveChat = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-[350px] sm:w-full ">
       <div className="m-2 ml-5 border-2 border-black    h-[395px] overflow-y-scroll flex flex-col-reverse">
         {getMsg.map((msg) => (
           <ChatMessage name={msg.name} message={msg.message} />
@@ -32,7 +32,7 @@ const LiveChat = () => {
       </div>
 
       <form
-        className="flex"
+        className="flex "
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(addMessages({ name: "Zatin Pandey", message: liveMsg }));
