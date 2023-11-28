@@ -47,11 +47,11 @@ const Header = () => {
     };
   }, [searchQuery]);
   return (
-    <div className="flex justify-between w-[350px] sm:w-screen  shadow-lg ">
+    <div className="flex justify-between w-[350px] mx-auto sm:w-auto  shadow-lg ">
       <div className="flex  ">
         <img
           onClick={() => toggle_menu()}
-          className=" h-8 ml-4 mt-1 cursor-pointer"
+          className=" h-8 ml-4 mt-2 cursor-pointer"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png"
           alt="hamburger-logo"
         />
