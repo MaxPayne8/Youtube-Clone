@@ -47,7 +47,7 @@ const Header = () => {
     };
   }, [searchQuery]);
   return (
-    <div className="flex justify-between w-[350px] mx-auto sm:w-auto  shadow-lg ">
+    <div className="flex justify-between w-full mx-auto sm:w-auto  shadow-lg ">
       <div className="flex  ">
         <img
           onClick={() => toggle_menu()}
@@ -57,7 +57,7 @@ const Header = () => {
         />
         <Link to="/">
           <img
-            className="hidden md:h-8 md:ml-4 md:mt-1  md:block"
+            className="hidden md:h-8 md:ml-4 md:mt-2  md:block"
             src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg"
             alt="utube-logo"
           />
