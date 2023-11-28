@@ -41,7 +41,7 @@ const LiveChat = () => {
       >
         <input
           type="text"
-          className="border-2 border-black mt-1 ml-5 w-[340px] rounded-lg p-1"
+          className="border-2 border-black mt-1 ml-5 w-[250px] rounded-lg p-1"
           placeholder="Chat as Zatin Pandey"
           value={liveMsg}
           onChange={(e) => {

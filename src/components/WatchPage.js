@@ -15,7 +15,7 @@ const WatchPage = () => {
   const [searchParams] = useSearchParams();
   console.log(searchParams.get("v"));
   return (
-    <div className="flex   ">
+    <div className="flex  w-full ">
       <Sidebar />
       <div>
         <Header />
@@ -23,7 +23,7 @@ const WatchPage = () => {
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="">
               <iframe
-                className=" w-[350px] md:w-[800px] h-[200px] md:h-[400px]  rounded-lg border-4 border-violet-900 mx-4 "
+                className=" w-full md:w-[800px] h-[200px] md:h-[400px]  rounded-lg border-4 border-violet-900 mx-4 "
                 width="800"
                 height="400"
                 src={"https://www.youtube.com/embed/" + searchParams.get("v")}
