@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import { closeMenu } from "../utils/appSlice";
 import { useParams, useSearchParams } from "react-router-dom";
@@ -8,6 +8,9 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 const WatchPage = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(closeMenu());
