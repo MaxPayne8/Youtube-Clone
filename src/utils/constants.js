@@ -5,7 +5,7 @@ export const YOUTUBE_API =
   API_KEY;
 
 export const YOUTUBE_SEARCH_API =
-  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://corsproxy.io/?https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const YOUTUBE_VIDEO =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=";
