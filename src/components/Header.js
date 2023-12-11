@@ -93,7 +93,7 @@ const Header = () => {
         />
 
         {showSuggestion && (
-          <div className="absolute bg-white mt-11  p-2 cursor-pointer w-96 rounded-lg shadow-lg ">
+          <div className="absolute bg-white mt-11  p-2 cursor-pointer w-48 ms:w-96 rounded-lg shadow-lg ">
             <ul>
               {searchResults.map((res) => (
                 <li

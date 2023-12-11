@@ -17,7 +17,7 @@ const VideoContainer = () => {
   };
 
   return (
-    <div className="flex flex-wrap w-full  ">
+    <div className="flex flex-wrap w-full justify-between  ">
       {movies.map((movie) => (
         <Link to={"/watch?v=" + movie.id}>
           <VideoCard key={movie.id} info={movie} />
