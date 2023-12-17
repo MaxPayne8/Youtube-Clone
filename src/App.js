@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 import WatchPage from "./components/WatchPage";
+import SearchedVideo from "./components/SearchedVideo";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -16,6 +17,7 @@ function App() {
       children: [
         { path: "/", element: <MainContainer /> },
         { path: "/watch", element: <WatchPage /> },
+        { path: "/results", element: <SearchedVideo /> },
       ],
     },
   ]);

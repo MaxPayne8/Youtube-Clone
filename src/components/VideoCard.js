@@ -14,7 +14,7 @@ const VideoCard = ({ info }) => {
       <ul>
         <li className="font-bold py-2">{title}</li>
         <li>{channelTitle}</li>
-        <li>{statistics.viewCount} views</li>
+        {statistics?.viewCount ? <li>{statistics?.viewCount} views</li> : null}
       </ul>
     </div>
   );
