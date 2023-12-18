@@ -78,31 +78,35 @@ const Header = () => {
       </div>
 
       <div className="flex ">
-        <input
-          className="border-2 border-black w-28 ml-2 md:w-80 h-10 mt-1 rounded-lg p-1"
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          onFocus={() => setShowSuggestions(true)}
-          onBlur={() => setShowSuggestions(false)}
-        ></input>
-        <Link to="/results">
-          <button
-            className="px-3 hidden md:block py-1 mx-3 rounded-lg text-white bg-black md:h-10 mt-1"
-            onClick={() => getVideo()}
-          >
-            Smart-Search
-          </button>
-        </Link>
+        <form>
+          <div className="flex">
+            <input
+              className="border-2 border-black w-28 ml-2 md:w-80 h-10 mt-1 rounded-lg p-1"
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => setShowSuggestions(false)}
+            ></input>
+            <Link to="/results">
+              <button
+                className="px-3 hidden md:block py-1 mx-3 rounded-lg text-white bg-black md:h-10 mt-1"
+                onClick={() => getVideo()}
+              >
+                Smart-Search
+              </button>
+            </Link>
 
-        <Link to="/results">
-          <button
-            className="m-2 ml-2  p-1 border-2 h-8 border-black rounded-lg w-8 hover:bg-orange-500 md:hidden"
-            onClick={() => getVideo()}
-          >
-            🔍
-          </button>
-        </Link>
+            <Link to="/results">
+              <button
+                className="m-2 ml-2  p-1 border-2 h-8 border-black rounded-lg w-8 hover:bg-orange-500 md:hidden"
+                onClick={() => getVideo()}
+              >
+                🔍
+              </button>
+            </Link>
+          </div>
+        </form>
 
         <img
           className="h-8 mr-6 pr-2 mt-2 "
