@@ -46,7 +46,7 @@ const Header = () => {
   // }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => getSearchSuggestions(), 500);
+    const timer = setTimeout(() => getSearchSuggestions(), 200);
 
     return () => {
       clearTimeout(timer);
