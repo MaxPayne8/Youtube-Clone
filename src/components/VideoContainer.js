@@ -20,12 +20,20 @@ const VideoContainer = () => {
   };
 
   return (
-    <div className="flex flex-wrap w-full justify-center bg-black  ">
-      {movies.map((movie) => (
-        <Link to={"/watch?v=" + movie.id}>
-          <VideoCard key={movie.id} info={movie} />
-        </Link>
-      ))}
+    <div className="bg-black ">
+      <div className="flex flex-wrap w-full justify-center   ">
+        {movies.map((movie) => (
+          <Link to={"/watch?v=" + movie.id}>
+            <VideoCard key={movie.id} info={movie} />
+          </Link>
+        ))}
+      </div>
+      <button
+        onClick={() => window.scrollTo(0, 0)}
+        className="px-3 relative flex justify-center  rounded-lg mx-auto  text-white bg-violet-700 font-semibold hover:bg-violet-900  mt-1"
+      >
+        TOP
+      </button>
     </div>
   );
 };

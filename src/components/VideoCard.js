@@ -7,7 +7,7 @@ const VideoCard = ({ info }) => {
   return (
     <div className="p-2  m-2 w-auto md:w-80  text-slate-200 hover:shadow-lg cursor-pointer rounded-lg  hover:shadow-slate-300">
       <img
-        className="rounded-lg "
+        className="rounded-lg mx-auto"
         alt="thumbnail"
         src={thumbnails.medium.url}
       />

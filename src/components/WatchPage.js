@@ -28,11 +28,11 @@ const WatchPage = () => {
   const [searchParams] = useSearchParams();
   console.log(searchParams.get("v"));
   return (
-    <div className="flex  w-full ">
+    <div className="flex bg-black w-full ">
       <Sidebar />
       <div>
         <Header />
-        <div className=" flex bg-black flex-col">
+        <div className=" flex  flex-col">
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="">
               <iframe
@@ -60,6 +60,12 @@ const WatchPage = () => {
 
           <CommentContainer />
         </div>
+        <button
+          onClick={() => window.scrollTo(0, 0)}
+          className="px-3 relative flex justify-center  rounded-lg mx-auto  text-white bg-violet-700 font-semibold hover:bg-violet-900  mt-1"
+        >
+          TOP
+        </button>
       </div>
     </div>
   );
