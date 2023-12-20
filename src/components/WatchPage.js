@@ -11,9 +11,19 @@ const WatchPage = () => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
+
+  const getComments = async () => {
+    const data = await fetch(
+      "https://corsproxy.org/?https%3A%2F%2Fdevelopers.google.com%2Fapis-explorer%2F%23p%2Fyoutube%2Fv3%2Fyoutube.commentThreads.list%3Fpart%3Dsnippet%2Creplies%26videoId%3D" +
+        searchParams.get("v")
+    );
+    const json = await data.json();
+    console.log(json);
+  };
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(closeMenu());
+    getComments();
   }, []);
   const [searchParams] = useSearchParams();
   console.log(searchParams.get("v"));

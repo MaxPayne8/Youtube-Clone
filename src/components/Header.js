@@ -38,12 +38,23 @@ const Header = () => {
     console.log(json);
     dispatch(searchData(json));
   };
+  const getVideo1 = async (value) => {
+    const data = await fetch(
+      "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=" +
+        value +
+        "&type=video" +
+        key
+    );
+    const json = await data.json();
+    console.log(json);
+    dispatch(searchData(json));
+  };
   const data = useSelector((store) => store.app.data);
   console.log(data);
 
-  // useEffect(() => {
-  //   getVideo();
-  // }, []);
+  const handleCheck = (e) => {
+    alert(e.target);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => getSearchSuggestions(), 200);
@@ -86,7 +97,11 @@ const Header = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setShowSuggestions(true)}
-              onBlur={() => setShowSuggestions(false)}
+              onBlur={() =>
+                setTimeout(() => {
+                  setShowSuggestions(false);
+                }, 500)
+              }
             ></input>
             <Link to="/results">
               <button
@@ -117,13 +132,15 @@ const Header = () => {
         {showSuggestion && (
           <div className="absolute  bg-white top-11 ml-2 cursor-pointer w-auto sm:w-80 rounded-lg shadow-lg ">
             <ul>
-              {searchResults.map((res) => (
-                <li
-                  onClick={() => setSearchQuery(res)}
-                  className="py-2 px-3 hover:bg-slate-400 shadow-sm"
-                >
-                  {res}
-                </li>
+              {searchResults.map((res, index) => (
+                <Link to="/results">
+                  <li
+                    onClick={() => getVideo1(res)}
+                    className="py-2 px-3 hover:bg-slate-400 shadow-sm"
+                  >
+                    {res}
+                  </li>
+                </Link>
               ))}
             </ul>
           </div>
