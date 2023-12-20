@@ -9,7 +9,7 @@ const SearchedVideo = () => {
   console.log(data);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex text-slate-100 bg-black flex-col">
       <div className="flex justify-center">
         <Link to="/">
           <button className=" w-40 rounded-lg hover:bg-red-600 p-2 m-2 bg-red-700 text-white font-semibold">
@@ -18,7 +18,7 @@ const SearchedVideo = () => {
         </Link>
       </div>
 
-      <div className="flex flex-wrap w-full justify-between  ">
+      <div className="flex flex-wrap w-full justify-center ">
         {data?.map((movie) => (
           <Link to={"/watch?v=" + movie.id.videoId}>
             <VideoCard key={movie.id.videoId} info={movie} />

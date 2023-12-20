@@ -21,12 +21,10 @@ const ButtonList = () => {
     "Perfumes",
   ];
   return (
-    <div className=" overflow-x-scroll">
-      <div className="flex flex-wrap ">
-        {list.map((category, index) => (
-          <Button name={category} key={index} />
-        ))}
-      </div>
+    <div className="flex flex-wrap  bg-black ">
+      {list.map((category, index) => (
+        <Button name={category} key={index} />
+      ))}
     </div>
   );
 };

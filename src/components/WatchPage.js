@@ -22,11 +22,11 @@ const WatchPage = () => {
       <Sidebar />
       <div>
         <Header />
-        <div className="mt-4 flex flex-col">
+        <div className=" flex bg-black flex-col">
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="">
               <iframe
-                className=" w-[90%] md:w-[800px] h-[200px] sm:h-[400px]  rounded-lg border-4 border-violet-900 mx-4 "
+                className=" my-3 w-[90%] md:w-[800px] h-[200px] sm:h-[400px]  rounded-lg mx-4 "
                 width="800"
                 height="400"
                 src={"https://www.youtube.com/embed/" + searchParams.get("v")}
