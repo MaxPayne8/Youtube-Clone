@@ -4,6 +4,8 @@ import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
+import ClipLoader from "react-spinners/ClipLoader";
+import Spinner from "./Spinner";
 
 const VideoContainer = () => {
   const [movies, setMovies] = useState([]);
@@ -22,18 +24,24 @@ const VideoContainer = () => {
   return (
     <div className="bg-black ">
       <div className="flex flex-wrap w-full justify-center   ">
-        {movies.map((movie) => (
-          <Link to={"/watch?v=" + movie.id}>
-            <VideoCard key={movie.id} info={movie} />
-          </Link>
-        ))}
+        {movies.length ? (
+          movies.map((movie) => (
+            <Link to={"/watch?v=" + movie.id}>
+              <VideoCard key={movie.id} info={movie} />
+            </Link>
+          ))
+        ) : (
+          <Spinner />
+        )}
       </div>
-      <button
-        onClick={() => window.scrollTo(0, 0)}
-        className="px-3 relative flex justify-center  rounded-lg mx-auto  text-white bg-violet-700 font-semibold hover:bg-violet-900  mt-1"
-      >
-        TOP
-      </button>
+      {movies.length ? (
+        <button
+          onClick={() => window.scrollTo(0, 0)}
+          className="px-3 relative flex justify-center  rounded-lg mx-auto  text-white bg-violet-700 font-semibold hover:bg-violet-900  mt-1"
+        >
+          TOP
+        </button>
+      ) : null}
     </div>
   );
 };

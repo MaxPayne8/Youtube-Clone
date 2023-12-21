@@ -65,7 +65,7 @@ const Header = () => {
   }, [searchQuery]);
   return (
     <div className="flex justify-between items-center w-full mx-auto sm:w-auto bg-black shadow-lg ">
-      <div className="flex   ">
+      <div className="flex justify-evenly  ">
         <img
           onClick={() => toggle_menu()}
           className=" h-6 md:h-8 ml-4 md:mt-2 my-auto bg-slate-100 rounded-lg cursor-pointer"
@@ -90,7 +90,7 @@ const Header = () => {
 
       <div className="flex items-center ">
         <form>
-          <div className="flex items-center">
+          <div className="flex justify-stretch items-center">
             <input
               className="border-2 border-black w-28 ml-2 md:w-80 h-auto md:h-10  rounded-lg p-1"
               type="text"
@@ -100,7 +100,7 @@ const Header = () => {
               onBlur={() =>
                 setTimeout(() => {
                   setShowSuggestions(false);
-                }, 500)
+                }, 300)
               }
             ></input>
             <Link to="/results">
