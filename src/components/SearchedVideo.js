@@ -28,7 +28,7 @@ const SearchedVideo = () => {
             </Link>
           </div>
 
-          {data.length === 20 ? (
+          {data?.length === 20 ? (
             <div className="flex flex-wrap w-full justify-center ">
               {data?.map((movie) => (
                 <Link to={"/watch?v=" + movie.id.videoId}>
