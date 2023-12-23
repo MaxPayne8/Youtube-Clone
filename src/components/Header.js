@@ -130,7 +130,7 @@ const Header = () => {
         />
 
         {showSuggestion && (
-          <div className="absolute  bg-white top-11 ml-2 cursor-pointer w-auto sm:w-80 rounded-lg shadow-lg ">
+          <div className="absolute  bg-white top-11 ml-2 cursor-pointer w-auto  rounded-lg shadow-lg ">
             <ul>
               {searchResults.map((res, index) => (
                 <Link to="/results">
