@@ -7,6 +7,7 @@ import LiveChat from "./LiveChat";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Spinner from "./Spinner";
+import { key } from "../utils/constants";
 
 const WatchPage = () => {
   useLayoutEffect(() => {
@@ -15,12 +16,15 @@ const WatchPage = () => {
   const [spinner, setSpinner] = useState(true);
 
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(closeMenu());
-    setTimeout(() => setSpinner(false), 200);
-  }, []);
   const [searchParams] = useSearchParams();
   console.log(searchParams.get("v"));
+
+  useEffect(() => {
+    dispatch(closeMenu());
+
+    setTimeout(() => setSpinner(false), 200);
+  }, []);
+
   return (
     <div className="flex bg-black w-full ">
       <Sidebar />
