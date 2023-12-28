@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addWatchPageVideo, closeMenu } from "../utils/appSlice";
+import { useDispatch } from "react-redux";
+import { closeMenu } from "../utils/appSlice";
 import { useParams, useSearchParams } from "react-router-dom";
 import CommentContainer from "./CommentContainer";
 import LiveChat from "./LiveChat";
@@ -14,15 +14,13 @@ const WatchPage = () => {
     window.scrollTo(0, 0);
   });
   const [spinner, setSpinner] = useState(true);
+  const [data, setData] = useState(true);
 
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   console.log(searchParams.get("v"));
   const id = searchParams.get("v");
-
-  const [videoData, setVideoData] = useState(null);
-
-  const getData = async () => {
+  const getWatchVideoData = async () => {
     const data = await fetch(
       "https://www.googleapis.com/youtube/v3/videos?part=id%2C+snippet&id=" +
         id +
@@ -30,20 +28,18 @@ const WatchPage = () => {
     );
     const json = await data.json();
     console.log(json);
-
-    setVideoData(json?.items[0]?.snippet);
-    console.log(videoData?.title);
+    setData(json?.items[0]?.snippet);
   };
 
   useEffect(() => {
     dispatch(closeMenu());
-    getData();
+    getWatchVideoData();
 
     setTimeout(() => setSpinner(false), 200);
   }, []);
 
   return (
-    <div className="flex bg-black ">
+    <div className="flex bg-black w-full ">
       <Sidebar />
       <div>
         <Header />
@@ -51,11 +47,11 @@ const WatchPage = () => {
         {spinner ? (
           <Spinner />
         ) : (
-          <div className=" flex w-full bg-black flex-col">
-            <div className="flex flex-col bg-black w-full  md:flex-row md:justify-between">
+          <div className=" flex  flex-col">
+            <div className="flex flex-col md:flex-row md:justify-between">
               <div className="">
                 <iframe
-                  className=" my-3  w-[300px] md:w-[800px] h-[200px] sm:h-[400px]  rounded-lg mx-4 "
+                  className=" my-3 w-[90%] md:w-[800px] h-[200px] sm:h-[400px]  rounded-lg mx-4 "
                   width="800"
                   height="400"
                   src={"https://www.youtube.com/embed/" + searchParams.get("v")}
@@ -64,13 +60,14 @@ const WatchPage = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen
                 ></iframe>
-                <div className="flex text-white flex-col">
-                  <h1 className=" px-2 text-xl mx-2 ">{videoData?.title}</h1>
-                  <h1 className=" px-2 mx-2 text-red-700 font-semibold">
-                    {videoData?.channelTitle}
+                <div className="flex flex-col text-white">
+                  <h1 className="mx-2 px-2 text-xl">{data?.title}</h1>
+                  <h1 className="mx-2 px-2 font-bold text-red-700">
+                    {data?.channelTitle}
                   </h1>
-                  <h1 className=" px-2 mx-2 my-1 text-slate-300 ">
-                    {videoData?.publishedAt}
+
+                  <h1 className="mx-2 px-2 my-1 text-slate-300">
+                    {data?.publishedAt}
                   </h1>
                 </div>
                 <div className="flex ">
@@ -83,9 +80,7 @@ const WatchPage = () => {
                 </div>
               </div>
 
-              <div className="">
-                <LiveChat />
-              </div>
+              <LiveChat />
             </div>
 
             <CommentContainer />
