@@ -51,11 +51,11 @@ const WatchPage = () => {
         {spinner ? (
           <Spinner />
         ) : (
-          <div className=" flex bg-black flex-col">
+          <div className=" flex w-full bg-black flex-col">
             <div className="flex flex-col bg-black w-full  md:flex-row md:justify-between">
               <div className="">
                 <iframe
-                  className=" my-3  w-[400px] md:w-[800px] h-[200px] sm:h-[400px]  rounded-lg mx-4 "
+                  className=" my-3  w-[300px] md:w-[800px] h-[200px] sm:h-[400px]  rounded-lg mx-4 "
                   width="800"
                   height="400"
                   src={"https://www.youtube.com/embed/" + searchParams.get("v")}
