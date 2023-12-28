@@ -65,11 +65,13 @@ const WatchPage = () => {
                   allowfullscreen
                 ></iframe>
                 <div className="flex text-white flex-col">
-                  <h1 className=" px-2 text-xl m-2 ">{videoData?.title}</h1>
-                  <h1 className=" px-2 m-2 text-red-700 font-semibold">
+                  <h1 className=" px-2 text-xl mx-2 ">{videoData?.title}</h1>
+                  <h1 className=" px-2 mx-2 text-red-700 font-semibold">
                     {videoData?.channelTitle}
                   </h1>
-                  <h1 className=" px-2 m-2 ">{videoData?.publishedAt}</h1>
+                  <h1 className=" px-2 mx-2 my-1 text-slate-300 ">
+                    {videoData?.publishedAt}
+                  </h1>
                 </div>
                 <div className="flex ">
                   <button className="bg-red-800 text-white rounded-lg p-2 m-2 w-36 hover:bg-red-600">
