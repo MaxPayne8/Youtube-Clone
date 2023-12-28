@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { closeMenu } from "../utils/appSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addWatchPageVideo, closeMenu } from "../utils/appSlice";
 import { useParams, useSearchParams } from "react-router-dom";
 import CommentContainer from "./CommentContainer";
 import LiveChat from "./LiveChat";
@@ -18,9 +18,26 @@ const WatchPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   console.log(searchParams.get("v"));
+  const id = searchParams.get("v");
+
+  const [videoData, setVideoData] = useState(null);
+
+  const getData = async () => {
+    const data = await fetch(
+      "https://www.googleapis.com/youtube/v3/videos?part=id%2C+snippet&id=" +
+        id +
+        key
+    );
+    const json = await data.json();
+    console.log(json);
+
+    setVideoData(json?.items[0]?.snippet);
+    console.log(videoData?.title);
+  };
 
   useEffect(() => {
     dispatch(closeMenu());
+    getData();
 
     setTimeout(() => setSpinner(false), 200);
   }, []);
@@ -35,10 +52,10 @@ const WatchPage = () => {
           <Spinner />
         ) : (
           <div className=" flex  flex-col">
-            <div className="flex flex-col md:flex-row md:justify-between">
+            <div className="flex flex-col bg-black w-full  md:flex-row md:justify-between">
               <div className="">
                 <iframe
-                  className=" my-3 w-[90%] md:w-[800px] h-[200px] sm:h-[400px]  rounded-lg mx-4 "
+                  className=" my-3   h-[200px] sm:h-[400px]  rounded-lg mx-4 "
                   width="800"
                   height="400"
                   src={"https://www.youtube.com/embed/" + searchParams.get("v")}
@@ -47,6 +64,13 @@ const WatchPage = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen
                 ></iframe>
+                <div className="flex text-white flex-col">
+                  <h1 className=" px-2 text-xl m-2 ">{videoData?.title}</h1>
+                  <h1 className=" px-2 m-2 text-red-700 font-semibold">
+                    {videoData?.channelTitle}
+                  </h1>
+                  <h1 className=" px-2 m-2 ">{videoData?.publishedAt}</h1>
+                </div>
                 <div className="flex ">
                   <button className="bg-red-800 text-white rounded-lg p-2 m-2 w-36 hover:bg-red-600">
                     SUBSCRIBE
@@ -57,7 +81,9 @@ const WatchPage = () => {
                 </div>
               </div>
 
-              <LiveChat />
+              <div className="">
+                <LiveChat />
+              </div>
             </div>
 
             <CommentContainer />
