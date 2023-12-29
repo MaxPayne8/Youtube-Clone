@@ -39,7 +39,7 @@ const WatchPage = () => {
   }, []);
 
   return (
-    <div className="flex bg-black w-full ">
+    <div className="flex bg-black  ">
       <Sidebar />
       <div>
         <Header />
