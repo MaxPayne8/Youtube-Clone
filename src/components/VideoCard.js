@@ -11,10 +11,19 @@ const VideoCard = ({ info }) => {
         alt="thumbnail"
         src={thumbnails.medium.url}
       />
-      <ul>
-        <li className="font-bold py-2">{title}</li>
-        <li>{channelTitle}</li>
-        {statistics?.viewCount ? <li>{statistics?.viewCount} views</li> : null}
+      <ul className="flex ">
+        <img
+          className="w-10 h-10 mt-3 mr-1 rounded-full"
+          alt="channel-icon "
+          src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg"
+        />
+        <div>
+          <li className="font-bold py-2">{title}</li>
+          <li>{channelTitle}</li>
+          {statistics?.viewCount ? (
+            <li>{statistics?.viewCount} views</li>
+          ) : null}
+        </div>
       </ul>
     </div>
   );
