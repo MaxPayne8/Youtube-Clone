@@ -54,7 +54,7 @@ const WatchPage = () => {
                   className=" my-3 w-[90%] md:w-[800px] h-[200px] sm:h-[400px]  rounded-lg mx-4 "
                   width="800"
                   height="400"
-                  src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+                  src={"https://www.youtube.com/embed/" + searchParams.get("v")+"?autoplay=1&mute=1"}
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
