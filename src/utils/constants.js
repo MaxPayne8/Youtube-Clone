@@ -5,8 +5,8 @@ export const YOUTUBE_API =
   API_KEY;
 
 export const YOUTUBE_SEARCH_API =
-  "https://corsproxy.org/?https%3A%2F%2Fsuggestqueries.google.com%2Fcomplete%2Fsearch%3Fclient%3Dfirefox%26ds%3Dyt%26";
-// "https://cors-anywhere.herokuapp.com/https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&";
+  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&";
+// "https://corsproxy.org/?https%3A%2F%2Fsuggestqueries.google.com%2Fcomplete%2Fsearch%3Fclient%3Dfirefox%26ds%3Dyt%26";
 
 export const YOUTUBE_VIDEO =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=";
